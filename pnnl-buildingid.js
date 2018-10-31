@@ -314,7 +314,9 @@
 		 *   returns 'false'.
 		 */
 		v3.isValid = function (code) {
-			return (String(code).match(v3.RE_PATTERN_) instanceof Array);
+			const matchData = String(code).match(v3.RE_PATTERN_);
+
+			return (matchData instanceof Array) && OpenLocationCode.isValid(matchData[v3.RE_GROUP_OPENLOCATIONCODE_]);
 		};
 
 		return v3;

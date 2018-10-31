@@ -1,6 +1,6 @@
 {
   "name": "pnnl-buildingid",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Unique Building Identification (UBID) for JavaScript",
   "main": "pnnl-buildingid.js",
   "scripts": {
