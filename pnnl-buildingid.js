@@ -39,21 +39,18 @@
 	if (typeof define === 'function' && define.amd) {
 		// AMD. Register as an anonymous module.
 		define(['open-location-code'], function ($) {
-			return (root.UniqueBuildingIdentification = factory($.OpenLocationCode));
+			return (root.UniqueBuildingIdentification = factory(new ($.OpenLocationCode)()));
 		});
 	} else if (typeof module === 'object' && module.exports) {
 		// Node. Does not work with strict CommonJS, but
 		// only CommonJS-like environments that support module.exports,
 		// like Node.
-		module.exports = factory(require('open-location-code').OpenLocationCode);
+		module.exports = factory(new (require('open-location-code').OpenLocationCode)());
 	} else {
 		// Browser globals
 		root.UniqueBuildingIdentification = factory(root.OpenLocationCode);
 	}
 } (this, function (OpenLocationCode) {
-	// See https://www.npmjs.com/package/open-location-code for details.
-	const openLocationCode = new OpenLocationCode();
-
 	const UniqueBuildingIdentification = {};
 
 	/**
@@ -214,7 +211,7 @@
 			const olc = matchData[v3.RE_GROUP_OPENLOCATIONCODE_];
 
 			// Decode the OLC for the centroid of the building footprint.
-			const centerOfMass = openLocationCode.decode(olc);
+			const centerOfMass = OpenLocationCode.decode(olc);
 
 			// Calculate the size of the OLC for the centroid of the building
 			// footprint in decimal degree units.
@@ -256,19 +253,19 @@
 		v3.encode = function (latitudeLo, longitudeLo, latitudeHi, longitudeHi, latitudeCenter, longitudeCenter, codeLength) {
 			// Encode the OLCs for the NE and SW corners of the minimal bounding box
 			// for the building footprint.
-			const northeast_openlocationcode = openLocationCode.encode(latitudeHi, longitudeHi, codeLength);
-			const southwest_openlocationcode = openLocationCode.encode(latitudeLo, longitudeLo, codeLength);
+			const northeast_openlocationcode = OpenLocationCode.encode(latitudeHi, longitudeHi, codeLength);
+			const southwest_openlocationcode = OpenLocationCode.encode(latitudeLo, longitudeLo, codeLength);
 
 			// Encode the OLC for the centroid of the building footprint.
-			const centroid_openlocationcode = openLocationCode.encode(latitudeCenter, longitudeCenter, codeLength);
+			const centroid_openlocationcode = OpenLocationCode.encode(latitudeCenter, longitudeCenter, codeLength);
 
 			// Decode the OLCs for the NE and SW corners of the minimal bounding box
 			// for the building footprint.
-			const northeast_openlocationcode_CodeArea = openLocationCode.decode(northeast_openlocationcode);
-			const southwest_openlocationcode_CodeArea = openLocationCode.decode(southwest_openlocationcode);
+			const northeast_openlocationcode_CodeArea = OpenLocationCode.decode(northeast_openlocationcode);
+			const southwest_openlocationcode_CodeArea = OpenLocationCode.decode(southwest_openlocationcode);
 
 			// Decode the OLC for the centroid of the building footprint.
-			const centroid_openlocationcode_CodeArea = openLocationCode.decode(centroid_openlocationcode);
+			const centroid_openlocationcode_CodeArea = OpenLocationCode.decode(centroid_openlocationcode);
 
 			// Calculate the size of the OLC for the centroid of the building
 			// footprint in decimal degree units.
