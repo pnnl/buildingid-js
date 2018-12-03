@@ -67,7 +67,7 @@ console.log(code === newCode);
 
 ## License
 
-BSD 3-clause "New" or "Revised" license.
+The package is available as open source under the terms of [The 2-Clause BSD License](https://opensource.org/licenses/BSD-2-Clause).
 
 ## Contributions
 

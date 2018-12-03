@@ -11,7 +11,7 @@
     "url": "https://github.com/pnnl/buildingid-js.git"
   },
   "author": "Mark Borkum <mark.borkum@pnnl.gov>",
-  "license": "BSD-3-Clause",
+  "license": "BSD-2-Clause",
   "homepage": "https://buildingid.pnnl.gov/",
   "dependencies": {
     "open-location-code": "^1.0.3"
