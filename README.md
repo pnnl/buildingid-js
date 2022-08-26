@@ -20,6 +20,24 @@ Use [npm](https://www.npmjs.com/) to uninstall the `pnnl-buildingid` package.
 npm uninstall pnnl-buildingid
 ```
 
+### Content Delivery Network
+
+The `pnnl-buildingid` package and its dependency, the `openlocationcode` package, are also distributed via [cdnjs](https://cdnjs.com/libraries/pnnl-buildingid), and can be included directly in HTML documents.
+
+#### Not Minified
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/openlocationcode/1.0.4/openlocationcode.js" integrity="sha512-l89EkrJBS8wnnRi58zAA9oj1Ok7h0twzXeAltaax8t1viFQ6zTyom41s+YdMUSnbjP/eC0P+mQOldVzvsrBn3A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pnnl-buildingid/1.0.3/pnnl-buildingid.js" integrity="sha512-Lff8arMmIctm9qPOG3jwtVaiefX/JADUZqWkr7ZDu2F9tweLtPtnhj7FFeKLXDseLGGUCq4QeyWjWgWovQ/abw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+```
+
+#### Minified
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/openlocationcode/1.0.4/openlocationcode.min.js" integrity="sha512-nNdmCJgFefLPn6W79uEUxH2n4+qbc0kJM8uBD8f7GlmusrQN9L13hpSBRxLHdLs+6oSDurcCuDlBXVKaz/hpcA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pnnl-buildingid/1.0.3/pnnl-buildingid.min.js" integrity="sha512-FVPTex/yDYrMDFymOsaQH4KpUt/FxnV73vABAiyy75nWgCrTCM87hol9UMyGwY9Uo1K1PtXsqXL96xXi4gxaiw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+```
+
 ## Usage
 
 The `pnnl-buildingid` package supports one usage:
